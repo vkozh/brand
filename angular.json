@@ -27,9 +27,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/css-element-queries/src/ResizeSensor.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +100,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/css-element-queries/src/ResizeSensor.js"
+            ]
           }
         }
       }

@@ -1,1 +1,717 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root{
+
+    /*--light-blue:#5ab2f6;
+    --blue:#0083c3;
+    --dark-blue:#005792;*/
+    --sun:#ffc700;
+    --orange:#ff8a40;
+    --red:#dd5061;
+    --green:#bddc04;
+    /*--dark-green:#88aa00;
+    --light-gray:#c4bbba;
+      --gray:#948b8a;
+      --dark-gray:#665e5d;*/
+    --black: #322a29;
+    --dark-gray:#5b5554; /* 80% */
+    --gray:#847f7f; /* 60% */
+    --light-gray: #adaaa9; /* 40% */
+    --gray-20: #d6d4d4; /* 20% */
+
+    --blue: #0083c3;
+    --blue-80:#339bd4; /* 80% */
+    --blue-60:#66b4df; /* 60% */
+    --blue-40: #99cde9; /* 40% */
+    --blue-20: #cce6f4; /* 20% */
+
+    --dark-blue: #005596;
+
+    /*--light-violet:#938acc;*/
+    --violet:#645d9b;
+    --dark-violet:#37336c;
+}
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    font-family: 'DecaSans';
+    color: var(--dark-gray);
+    padding-right: 8%;
+}
+
+.h1, h1 {
+    font-size: calc(1.375rem + 1.3vw);
+}
+
+p{
+    font-family: 'DecaSans';
+    color: var(--black);
+}
+
+.deca{
+    font-family: 'DecaSans'!important;
+}
+
+.font_serif{
+    font-family: 'DecaSerif';
+}
+
+.font_rubik{
+    font-family: 'Rubik'!important;
+}
+mat-sidenav-container{
+    overflow: auto!important;
+}
+
+mat-sidenav-content{
+    background-color: white;
+}
+
+.inner-content{
+    overflow-x: auto;
+}
+
+.sidebar__inner{
+    transform: translate(0, 0); /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
+
+
+.bg-blue-80{background-color:var(--blue-80)!important}
+.bg-blue-60{background-color:var(--blue-60)!important}
+.bg-blue-40{background-color:var(--blue-40)!important}
+.bg-blue-20{background-color:var(--blue-20)!important}
+.bg-blue{background-color:var(--blue)!important}
+.bg-dark-blue{background-color:var(--dark-blue)!important}
+.bg-orange{background-color:var(--orange)!important}
+.bg-sun{background-color:var(--sun)!important}
+.bg-red{background-color:var(--red)!important}
+.bg-green{background-color:var(--green)!important}
+/*.bg-light-blue{background-color:var(--light-blue)!important}
+.bg-dark-green{background-color:var(--dark-green)!important}
+.bg-light-violet{background-color:var(--light-violet)!important}*/
+.bg-dark-violet{background-color:var(--dark-violet)!important}
+.bg-violet{background-color:var(--violet)!important}
+.bg-black{background-color:var(--black)!important}
+.bg-dark-gray{background-color:var(--dark-gray)!important}
+.bg-gray{background-color:var(--gray)!important}
+.bg-light-gray{background-color:var(--light-gray)!important}
+.bg-gray-20{background-color:var(--gray-20)!important}
+
+
+.color-light-blue{color:var(--light-blue)}
+.color-blue{color:var(--blue)}
+.color-dark-blue{color:var(--dark-blue)}
+.color-orange{color:var(--orange)}
+.color-sun{color:var(--sun)}
+.color-red{color:var(--red)}
+.color-green{color:var(--green)}
+.color-dark-green{color:var(--dark-green)}
+.color-light-gray{color:var(--light-gray)}
+.color-gray{color:var(--gray)}
+.color-dark-gray{color:var(--dark-gray)}
+.color-light-violet{color:var(--light-violet)}
+.color-violet{color:var(--violet)}
+.color-dark-violet{color:var(--dark-violet)}
+
+.border-trans{border-color: rgba(0, 0, 0, 0)!important;}
+.bg-gray-600{background-color:var(--bs-gray-600)}
+.bg-gray-400{background-color:var(--bs-gray-400)}
+
+.main-colors{
+   /* grid-template-areas: 'tbg tsun tred tblue tviolet tgreen tgray torange'
+                        '. . . lightblue lightviolet . lightgray . '
+                        'black sun red blue violet green gray orange'
+                        'gray600  sun red blue violet green gray orange'
+                        'gray400  sun red blue violet green gray orange'
+                        'white  sun red blue violet green gray orange'
+                        '. . . darkblue darkviolet darkgreen darkgray .'
+                        '. . . . . . . .' 
+                        'tgrad . . . . . . . '
+                        '. grad1 grad2 grad3 grad4 . . .';
+                        grid-template-columns: repeat(8, 130px);
+    cursor: grab;
+    overflow: auto;*/
+    grid-template-areas: 'title blue black white'
+                         'primary3  primary3    primary4 primary4'
+                         'secondary1 secondary1  secondary2 secondary2'
+                         'additional1 additional1 additional2 additional2';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+                     
+}
+
+@media (max-width:1400px){ 
+    .main-colors{
+    grid-template-areas: 
+                         'title title'
+                         'blue black'
+                         'primary3 primary4'
+                         'white .'
+                         'secondary1 secondary1'
+                         'secondary2 secondary2'
+                         'additional1 additional1'
+                         'additional2 additional2';
+    grid-template-columns: 1fr 1fr;
+    }
+    .combinations {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    h4{
+        width: 100%!important;
+    }
+
+    .mini-color{
+        width: 120px!important;
+    }
+    .color-wrapper{
+        justify-content: center!important;
+    }
+    .section{
+        width: 100%;
+        justify-content: start!important;
+        flex-wrap:wrap!important;
+    }
+
+
+}
+
+@media (max-width:992px){
+    .main-colors{
+    grid-template-areas: 
+                         'title title'
+                         'blue black'
+                         'primary3 primary4'
+                         'white white'
+                         'secondary1 secondary1'
+                         'secondary2 secondary2'
+                         'additional1 additional1'
+                         'additional2 additional2';
+    grid-template-columns: 120px 120px;
+    }
+    .combinations {
+        grid-template-columns: 1fr  !important;
+    }
+    h4{
+        width: 100%!important;
+    }
+    .color, .color2{
+        width: 120px!important;
+        height: 120px!important;
+    }
+    .mini-color{
+        width: 120px!important;
+    }
+    .section{
+        justify-content: start!important;
+        flex-wrap:wrap!important;
+        max-width: 400px;
+    }
+    .mini-color-wrapper {
+        flex-direction: column-reverse;
+    }
+    
+    .mini-color-wrapper2 {
+        flex-direction: column;
+    }
+
+    .color .text-white, .mini-color .text-white, .color2 .text-white{
+        font-size: 0.8rem!important;
+    }
+    .main-colors p, .colors span, .mini-color span, .color2 span{
+        font-size: 0.6rem!important;
+    }
+
+    .logos svg{
+        width: 50px!important;
+        height: 50px!important;
+    }
+}
+
+.color{
+    width: 300px;
+    height: 150px;
+}
+.main-colors p{
+    font-size: 0.8rem;
+    font-size: clamp(60%,0.8rem,1rem);
+    line-height: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.mini-color{
+    width: 150px;
+    height: 80px;
+}
+.color2{
+    width: 150px;
+    height: 150px;
+}
+
+.colors svg text{
+    font-family: 'DecaSans';
+    font-size: 0.8rem;
+    font-size: clamp(65%, 0.6rem, 0.8rem);    
+    line-height: calc(12px + (12 - 12) * ((100vw - 300px) / (1600 - 300)));
+   /* word-break: break-word;*/
+   word-wrap: normal;
+}
+
+.colors span, .mini-color span, .color2 span{
+    font-size: 0.6rem!important;
+}
+.color .text-white, .mini-color .text-white, .color2 .text-white{
+    font-size: 1rem
+}
+
+.colors img{
+    width: 130px;
+    width: 100%;
+}
+
+.combinations{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.combinations div{
+    text-align: center;
+}
+.combinations svg{
+    overflow: visible;
+}
+
+a:hover{
+    color:var(--dark-blue);
+}
+
+.nav-link:focus, .nav-link:hover {
+    color:var(--black);
+}
+
+.nav-pills .nav-link.active{
+    color: var(--dark-black);
+    background: inherit;
+}
+
+.menu-modal{
+    height: fit-content;
+    border-radius: 0;
+}
+.menu-modal .modal-dialog{
+    margin: 0;
+    max-width: 280px;
+}
+.menu-modal .modal-content{
+    border-radius: 0;
+    border: none;
+    background-color: #fff0;
+}
+
+.close-btn{
+    position: absolute;
+    right: 0;
+    padding: 11px 18px!important;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+.mat-drawer-side{
+    border: none;
+}
+
+@media (max-width:768px) {
+
+  /*  mat-sidenav {
+        width: 32px;
+    }*/
+    .logos a{
+        width:120px!important; 
+    }
+    .logos div{
+        -webkit-grid-gap:1rem!important
+    }
+    .logos svg{
+        width: 30px!important;
+        height: 30px!important;
+    }
+    .colors{
+        grid-template-areas:'tblue     tgray       tviolet     tgreen'
+                            'lightblue lightgray   lightviolet .'
+                            'blue      gray        violet      green'
+                            'darkblue  darkgray    darkviolet  darkgreen '
+                            'torange   tsun        tred        .'
+                            'orange    sun         red         .'
+                            'tgrad     .           .           .'
+                            'grad1     grad2       grad3       grad4'
+                         
+        ;
+        grid-template-columns: repeat(4, 130px);  
+       
+    }
+
+}
+
+@media (min-width:768px) and (max-width:1603px){
+    .colors{
+        zoom: 0.8;
+    }
+}
+
+.width-inherit{
+    width: inherit!important;
+}
+
+.logos{
+    flex-wrap: wrap;
+}
+
+.logos a{
+    width:186px;
+    font-size: calc(10px + (10 - 8) * ((100vw - 300px) / (2000 - 300)));
+    line-height: calc(11px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.templates a{
+    font-size: calc(8px + (14 - 8) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(10px + (20 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.justify-content-center{
+    justify-content: center!important;
+    -webkit-justify-content: center!important;
+}
+
+.content{
+   /* overflow-x: auto;*/
+   
+}
+
+.border-brand-dark-gray{
+    border-color: var(--dark-gray)!important;
+}
+.border-brand-light-gray{
+    border-color: var(--light-gray)!important;
+}
+
+.color-brand-light-blue{
+    color:  var(--light-blue)!important;
+}
+
+.color-brand-blue{
+    color:var(--blue);
+}
+
+.color-brand-dark-blue{
+    color:  var(--dark-blue)!important;
+}
+
+.btn{
+    background-color:var(--blue);
+    padding:3px 27px;
+    border-radius:0;
+    margin: 20px 0;
+}
+
+.mat-menu-content{
+    padding: 0!important;
+
+}
+
+.mat-menu-panel{
+    box-shadow: none;
+}
+
+.nav-link{
+    color:white;
+    font-size: 1.2rem;
+}
+
+.border-brand-gray{
+    border-color: var(--gray)!important;
+}
+
+.dot{
+    height: 5px;
+    width: 5px;
+    background-color: var(--gray);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.nav li{
+    display: flex;
+    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: -3px;
+}
+
+.dlnp_link{
+    display: flex;
+    justify-content: end;
+    padding: .5rem 1rem;
+    width: 100%;
+}
+
+.templates{
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+/* FONTS */
+
+@font-face {
+    font-family: "DecaSans";
+    src: url("/brand/assets/fonts/Deca/Deca%20Sans_Regular.eot");
+    src:
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Regular.eot?#iefix") format("embedded-opentype"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Regular.woff2") format("woff2"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Regular.woff") format("woff"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSans";
+	src: url("/brand/assets/fonts/Deca/Deca%20Sans_Italic.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Italic.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Italic.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Italic.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Italic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+        font-display: swap;
+}
+
+@font-face {
+    font-family: "DecaSans";
+    src: url("/brand/assets/fonts/Deca/Deca%20Sans_Medium.eot");
+    src:
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Medium.eot?#iefix") format("embedded-opentype"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Medium.woff2") format("woff2"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Medium.woff") format("woff"),
+        url("/brand/assets/fonts/Deca/Deca%20Sans_Medium.ttf") format("truetype");
+    font-weight: 600; 
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSans";
+	src: url("/brand/assets/fonts/Deca/Deca%20Sans_Medium%20Italic.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Medium%20Italic.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Medium%20Italic.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Medium%20Italic.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Medium%20Italic.ttf") format("truetype");
+	font-weight: 600;
+
+	font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSans";
+	src: url("/brand/assets/fonts/Deca/Deca%20Sans_Bold.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: bolder;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSans";
+	src: url("/brand/assets/fonts/Deca/Deca%20Sans_Bold%20Italic.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold%20Italic.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold%20Italic.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold%20Italic.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Sans_Bold%20Italic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: bolder;
+	font-style: italic;
+    font-display: swap;
+}
+
+.fw-bold{
+    font-weight: 600!important;
+}
+
+@font-face {
+	font-family: "DecaSerif";
+	src: url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Regular.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Regular.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Regular.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Regular.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "DecaSerif";
+	src: url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Italic.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Italic.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Italic.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Italic.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Italic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+        font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSerif";
+	src: url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold.ttf") format("truetype");
+         font-weight: 700;
+         font-style: bolder;
+         font-display: swap;
+}
+
+@font-face {
+	font-family: "DecaSerif";
+	src: url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold%20Italic.eot");
+	src:
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold%20Italic.eot?#iefix") format("embedded-opentype"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold%20Italic.woff2") format("woff2"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold%20Italic.woff") format("woff"),
+	     url("/brand/assets/fonts/Deca/Deca%20Serif%20New_Bold%20Italic.ttf") format("truetype");
+         font-weight: 700;
+         font-style: bolder;
+         font-style: italic;
+         font-display: swap;
+}
+
+
+/* Rubik Font*/
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Light.ttf");
+    font-weight: 300;
+    font-style: light;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-LightItalic.ttf");
+    font-weight: 300;
+    font-style: light;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Italic.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Medium.ttf");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-MediumItalic.ttf");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-SemiBold.ttf");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Bold.ttf");
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-ExtraBold.ttf");
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-ExtraBoldItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-Black.ttf");
+    font-weight: 900;
+    font-style: bolder;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src: url("/brand/assets/fonts/Rubik/Rubik-BlackItalic.ttf");
+    font-weight: 900;
+    font-style: bolder;
+    font-style: italic;
+    font-display: swap;
+}
