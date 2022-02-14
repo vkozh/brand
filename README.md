@@ -1,4 +1,12 @@
-# Brand
+## Брэндбук ЛЯП ОИЯИ
+
+**Размещение:**
+[dlnp.jinr.ru/brand](https://dlnp.jinr.ru/brand)
+
+**Функционал:**
+Несколько страниц с информацией: цвета, шрифты, презентации и пр.
+
+## Brand
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
